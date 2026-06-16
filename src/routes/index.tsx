@@ -602,7 +602,7 @@ function ReelsViewerModal({
   onClose: () => void;
 }) {
   const [activeIndex, setActiveIndex] = useState(initialIndex);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<any | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
