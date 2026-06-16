@@ -1,4 +1,9 @@
 import heroPlants from "@/assets/hero-plants-new.png";
+import arecaImg from "@/assets/areca.png";
+import flaxImg from "@/assets/flax-series.png";
+import leaf2Img from "@/assets/leaf-set-2.png";
+import leaf3Img from "@/assets/leaf-set-3.png";
+import vanillaImg from "@/assets/vanilla.png";
 import catDecor from "@/assets/cat-decor.jpg";
 import catFurniture from "@/assets/cat-furniture.jpg";
 import catBedding from "@/assets/cat-bedding.jpg";
@@ -93,102 +98,109 @@ export const categories = [
 
 export const products = [
   {
-    name: "Artificial Dragon Quintara Plant - 7 Feet",
-    price: 62999,
-    mrp: 82000,
-    img: prod1,
-    thumbnails: [prod1, prod2, prod3, prod4, prod1],
-    code: "ADQ7821",
-    color: "Deep Green",
-    material: "Natural wood trunk & Silk leaves",
-    dimensions: "Height: 213 cm (7 Feet) Approx.",
-    insideBox: "1 Artificial Plant in Basic Plastic Pot",
+    name: "Flax Series Tapered Vases",
+    price: 5200,
+    mrp: 7500,
+    img: flaxImg,
+    thumbnails: [flaxImg, flaxImg, flaxImg],
+    code: "FLX48",
+    color: "Sea Green / Matte Teal",
+    material: "Premium Matte Fiber-Glass",
+    dimensions: "D: H 21\" | C: H 28\" | B: H 33\" | A: H 40\"",
+    insideBox: "1 Tapered Floor Vase",
     delivery: "5-7 Working Days",
     cod: "Available on orders below ₹3998",
-    description:
-      "Bring a touch of dramatic greenery to your space with the Artificial Dragon Quintara Plant. Standing at a magnificent 7 feet tall, this premium replica features slender, arching leaves and a multi-trunk structure that creates a lush and natural architectural silhouette.",
+    description: "Sleek, minimalist floor vases boasting organic curves and a calming sea green matte finish. Available in four progressive sizes to create a striking architectural landscape in entryways or corners.",
     pairsWith: { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+    sizes: [
+      { name: "Flax-D (H: 21\")", price: 5200, mrp: 7500, dimensions: "Height: 21\", Top: 8.5\", Bottom: 6.5\"" },
+      { name: "Flax-C (H: 28\")", price: 7580, mrp: 11000, dimensions: "Height: 28\", Top: 11\", Bottom: 8.5\"" },
+      { name: "Flax-B (H: 33\")", price: 11870, mrp: 17000, dimensions: "Height: 33\", Top: 13.5\", Bottom: 10\"" },
+      { name: "Flax-A (H: 40\")", price: 14910, mrp: 22000, dimensions: "Height: 40\", Top: 16\", Bottom: 12\"" }
+    ]
   },
   {
-    name: "Artificial Natura Ficus Plant - 7 Feet",
-    price: 10799,
-    mrp: 15000,
-    img: prod2,
-    thumbnails: [prod2, prod1, prod3, prod4, prod2],
-    code: "AMS4742",
-    color: "Green",
-    material: "PVC",
-    dimensions: "Height: 213 cm Approx.",
-    insideBox: "1 Artificial Plant",
+    name: "Leaf Textured Planters - Set of 2",
+    price: 4500,
+    mrp: 6500,
+    img: leaf2Img,
+    thumbnails: [leaf2Img, leaf2Img, leaf2Img],
+    code: "LFS70",
+    color: "Light Grey / Leaf Pattern",
+    material: "Textured Ceramic",
+    dimensions: "Small: H 16.5\", Top 10.5\" | Large: H 25.5\", Top 17\"",
+    insideBox: "Set of 2 Leaf-Patterned Planters",
     delivery: "5-7 Working Days",
-    cod: "Available For Orders Under Rs.3998/- Only",
-    description:
-      "Transform your interiors with the elegant presence of the Artificial Natura Ficus Plant – 7 Feet. Designed to replicate the lush beauty of a natural ficus tree, this tall artificial plant features dense green foliage and a realistic trunk structure.",
+    cod: "Available on orders below ₹3998",
+    description: "A set of two elegant tapered planters featuring subtle leaf texture on a neutral light grey backdrop. Designed to complement tall foliage and architectural indoor plants.",
     pairsWith: { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+    sizes: [
+      { name: "Size B (Small - H: 16.5\")", price: 4500, mrp: 6500, dimensions: "Height: 16.5\", Top: 10.5\", Bottom: 10.5\"" },
+      { name: "Size A (Large - H: 25.5\")", price: 9000, mrp: 13500, dimensions: "Height: 25.5\", Top: 17\", Bottom: 17\"" }
+    ]
   },
   {
-    name: "Artificial Lucky Bamboo Bonsai Plant",
-    price: 899,
-    mrp: 1200,
-    img: prod3,
-    thumbnails: [prod3, prod1, prod2, prod4, prod3],
-    isSoldOut: true,
-    code: "ABB1209",
-    color: "Vibrant Green",
-    material: "Polyester foliage & Ceramic pot",
-    dimensions: "Height: 45 cm (1.5 Feet) Approx.",
-    insideBox: "1 Bamboo Bonsai in Ceramic Pot",
+    name: "Leaf Textured Planters - Set of 3",
+    price: 4500,
+    mrp: 6500,
+    img: leaf3Img,
+    thumbnails: [leaf3Img, leaf3Img, leaf3Img],
+    code: "LFS69",
+    color: "Charcoal Grey / Leaf Pattern",
+    material: "Stone-finished Ceramic",
+    dimensions: "Small: H 13.5\", Top 12.5\" | Medium: H 17.5\", Top 16\" | Large: H 21\", Top 19.5\"",
+    insideBox: "Set of 3 Leaf-Patterned Planters",
     delivery: "5-7 Working Days",
-    cod: "Available For Orders Under Rs.3998/- Only",
-    description:
-      "The classic symbol of good fortune and peace, perfected for maintenance-free styling. Our Lucky Bamboo Bonsai features intricate braided stalks and lush green shoots, styled in a sleek ceramic container.",
-    pairsWith: {
-      code: "LRB2799",
-      name: "Loom Rattan Storage Basket",
-      price: 1899,
-      mrp: 2799,
-      img: prod4,
-    },
-  },
-  {
-    name: "Artificial Variegated Pothos Plant - 1.5 Feet",
-    price: 1799,
-    mrp: 2500,
-    img: prod4,
-    thumbnails: [prod4, prod1, prod2, prod3, prod4],
-    code: "AVP2500",
-    color: "Variegated Yellow-Green",
-    material: "Premium PVC & Plastic hanger",
-    dimensions: "Height: 45 cm Approx.",
-    insideBox: "1 Variegated Pothos Plant",
-    delivery: "5-7 Working Days",
-    cod: "Available For Orders Under Rs.3998/- Only",
-    description:
-      "Add a cascading pop of color to your shelves, counters, or hangers. This Variegated Pothos replicates the heart-shaped leaves and yellow-green marbling of natural pothos, draping elegantly over any edge.",
+    cod: "Available on orders below ₹3998",
+    description: "Embellished with detailed leaf engravings, these charcoal grey planters introduce depth and quiet texture to your plant arrangements. Perfect for modern, rustic, or minimal settings.",
     pairsWith: { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+    sizes: [
+      { name: "Size C (Small - H: 13.5\")", price: 4500, mrp: 6500, dimensions: "Height: 13.5\", Top: 12.5\", Bottom: 7.5\"" },
+      { name: "Size B (Medium - H: 17.5\")", price: 7200, mrp: 10000, dimensions: "Height: 17.5\", Top: 16\", Bottom: 9\"" },
+      { name: "Size A (Large - H: 21\")", price: 8000, mrp: 12000, dimensions: "Height: 21\", Top: 19.5\", Bottom: 10.5\"" }
+    ]
   },
   {
-    name: "Artificial Monstera Deliciosa Plant",
-    price: 2499,
-    mrp: 3999,
-    img: prod1,
-    thumbnails: [prod1, prod2, prod3, prod4, prod1],
-    code: "AMD3999",
-    color: "Deep Green",
-    material: "Polyester & Plastic trunk",
-    dimensions: "Height: 120 cm (4 Feet) Approx.",
-    insideBox: "1 Monstera Plant in Starter Pot",
+    name: "VANILLA Planters - Set of 3",
+    price: 3000,
+    mrp: 4500,
+    img: vanillaImg,
+    thumbnails: [vanillaImg, vanillaImg, vanillaImg],
+    code: "VNL83",
+    color: "Sage Green / Textured",
+    material: "Textured Ceramic",
+    dimensions: "Small: H 8\", Top 9\" | Medium: H 12\", Top 13.5\" | Large: H 16\", Top 18\"",
+    insideBox: "Set of 3 Planters (Sizes A, B, C)",
     delivery: "5-7 Working Days",
-    cod: "Available For Orders Under Rs.3998/- Only",
-    description:
-      "Recreate the iconic tropical vibe with our faux Monstera Deliciosa. Featuring large, glossy split leaves that can be bent and shaped to fit your space, it brings a statement-making organic feel to any room.",
-    pairsWith: {
-      code: "LRB2799",
-      name: "Loom Rattan Storage Basket",
-      price: 1899,
-      mrp: 2799,
-      img: prod4,
-    },
+    cod: "Available on orders below ₹3998",
+    description: "Add a touch of contemporary refinement to your botanical displays with our Vanilla Planters. Featuring an intricate, textured basket-weave pattern in an elegant sage green hue, this set of three rounded planters brings organic charm and artistic craft to any setting.",
+    pairsWith: { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+    sizes: [
+      { name: "Size C (Small - H: 8\")", price: 3000, mrp: 4500, dimensions: "Height: 8\", Top: 9\", Bottom: 0\"" },
+      { name: "Size B (Medium - H: 12\")", price: 5000, mrp: 7500, dimensions: "Height: 12\", Top: 13.5\", Bottom: 0\"" },
+      { name: "Size A (Large - H: 16\")", price: 7300, mrp: 11000, dimensions: "Height: 16\", Top: 18\", Bottom: 0\"" }
+    ]
+  },
+  {
+    name: "Areca Ribbed Planters - Set of 3",
+    price: 5500,
+    mrp: 8000,
+    img: arecaImg,
+    thumbnails: [arecaImg, arecaImg, arecaImg],
+    code: "ARC84",
+    color: "Charcoal Black / Ribbed",
+    material: "Heavy-textured Ceramic",
+    dimensions: "Small: H 15\", Top 8\" | Medium: H 20\", Top 11\" | Large: H 26\", Top 15\"",
+    insideBox: "Set of 3 Ribbed Planters",
+    delivery: "5-7 Working Days",
+    cod: "Available on orders below ₹3998",
+    description: "Add a touch of structural drama to your corners with these tall, charcoal black ribbed planters. Their heavy horizontal ribbing provides a beautiful backdrop for bright foliage.",
+    pairsWith: { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+    sizes: [
+      { name: "Size C (Small - H: 15\")", price: 5500, mrp: 8000, dimensions: "Height: 15\", Top: 8\", Bottom: 0\"" },
+      { name: "Size B (Medium - H: 20\")", price: 7000, mrp: 10000, dimensions: "Height: 20\", Top: 11\", Bottom: 0\"" },
+      { name: "Size A (Large - H: 26\")", price: 8500, mrp: 12000, dimensions: "Height: 26\", Top: 15\", Bottom: 0\"" }
+    ]
   },
   {
     name: "Faux Ficus Tree — 6 Feet",

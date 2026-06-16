@@ -122,10 +122,20 @@ function ProductImages({
 function ProductDetails({
   product,
 }: {
-  product: ReturnType<typeof getProductByCode> & { code: string };
+  product: ReturnType<typeof getProductByCode> & { code: string; sizes?: any[] };
 }) {
   const [quantity, setQuantity] = useState(1);
-  const off = Math.round(((product.mrp - product.price) / product.mrp) * 100);
+  const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[0] : null);
+
+  // Reset selected size when product changes
+  useEffect(() => {
+    setSelectedSize(product.sizes ? product.sizes[0] : null);
+  }, [product.code, product.sizes]);
+
+  const displayPrice = selectedSize ? selectedSize.price : product.price;
+  const displayMrp = selectedSize ? selectedSize.mrp : product.mrp;
+  const off = Math.round(((displayMrp - displayPrice) / displayMrp) * 100);
+  const displayDimensions = selectedSize ? selectedSize.dimensions : product.dimensions;
 
   return (
     <div className="w-full lg:w-1/2 flex flex-col justify-between">
@@ -141,10 +151,10 @@ function ProductDetails({
         {/* Price Tag */}
         <div className="mt-5 flex items-center gap-3.5">
           <span className="text-2xl md:text-3xl font-semibold text-primary serif">
-            ₹{product.price.toLocaleString("en-IN")}
+            ₹{displayPrice.toLocaleString("en-IN")}
           </span>
           <span className="text-base text-muted-foreground line-through serif">
-            ₹{product.mrp.toLocaleString("en-IN")}
+            ₹{displayMrp.toLocaleString("en-IN")}
           </span>
           <span className="text-[10px] bg-primary text-primary-foreground px-2 py-0.5 font-bold uppercase tracking-wider rounded">
             {off}% OFF
@@ -154,6 +164,30 @@ function ProductDetails({
         <p className="text-[10px] text-muted-foreground/80 mt-1.5 italic">
           (Inclusive of all Taxes)
         </p>
+
+        {/* Size Selection */}
+        {product.sizes && (
+          <div className="mt-6">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold mb-3">
+              Select Size
+            </p>
+            <div className="flex flex-wrap gap-2.5">
+              {product.sizes.map((sz) => (
+                <button
+                  key={sz.name}
+                  onClick={() => setSelectedSize(sz)}
+                  className={`px-4 py-2 text-xs font-semibold tracking-wide border transition-all duration-200 rounded cursor-pointer ${
+                    selectedSize?.name === sz.name
+                      ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                      : "border-border/60 bg-background text-foreground hover:border-muted-foreground"
+                  }`}
+                >
+                  {sz.name.split(" (")[0]}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Stock Level Warning */}
         <div className="mt-6">
@@ -172,7 +206,7 @@ function ProductDetails({
           {[
             ["Color", product.color],
             ["Material", product.material],
-            ["Dimensions", product.dimensions],
+            ["Dimensions", displayDimensions],
             ["Inside the Box", product.insideBox],
             ["Delivery Time", product.delivery],
             ["COD Support", product.cod],
