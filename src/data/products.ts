@@ -481,8 +481,8 @@ export const reels = [
     img: reel1,
     caption: "Every corner deserves a bloom",
     products: [
-      { code: "FBV3999", name: "Faux Bougainvillea — 4 ft", price: 3999, mrp: 6999, img: prod1 },
-      { code: "DSV2299", name: "Dune Stoneware Vase", price: 1499, mrp: 2299, img: prod3 },
+      { code: "VNL83", name: "VANILLA Planters - Set of 3", price: 3000, mrp: 4500, img: vanillaImg },
+      { code: "FLX48", name: "Flax Series Tapered Vases", price: 5200, mrp: 7500, img: flaxImg },
     ],
   },
   {
@@ -491,8 +491,8 @@ export const reels = [
     img: reel2,
     caption: "Magnetic shelves are a vibe",
     products: [
-      { code: "MFS1899", name: "Magnetic Floating Shelf", price: 1899, mrp: 2799, img: prod4 },
-      { code: "IMB9000", name: "Indo Mocha Laundry Basket", price: 6499, mrp: 9000, img: prod4 },
+      { code: "ARC84", name: "Areca Ribbed Planters - Set of 3", price: 5500, mrp: 8000, img: arecaImg },
+      { code: "LFS69", name: "Leaf Textured Planters - Set of 3", price: 4500, mrp: 6500, img: leaf3Img },
     ],
   },
   {
@@ -501,8 +501,8 @@ export const reels = [
     img: reel3,
     caption: "I always wanted one",
     products: [
-      { code: "TPT2399", name: "Travellers Palm — Tall", price: 2399, mrp: 3299, img: prod1 },
-      { code: "HCT12999", name: "Halo Marble Coffee Table", price: 12999, mrp: 18999, img: prod2 },
+      { code: "LFS70", name: "Leaf Textured Planters - Set of 2", price: 4500, mrp: 6500, img: leaf2Img },
+      { code: "VNL83", name: "VANILLA Planters - Set of 3", price: 3000, mrp: 4500, img: vanillaImg },
     ],
   },
   {
@@ -511,8 +511,8 @@ export const reels = [
     img: reel4,
     caption: "Tiny upgrades, big shift",
     products: [
-      { code: "HBD949", name: "Hammered Bronze Dispenser", price: 949, mrp: 1599, img: prod3 },
-      { code: "ABV2999", name: "Aero Black Ceramic Vessel", price: 1899, mrp: 2999, img: prod3 },
+      { code: "FLX48", name: "Flax Series Tapered Vases", price: 5200, mrp: 7500, img: flaxImg },
+      { code: "ARC84", name: "Areca Ribbed Planters - Set of 3", price: 5500, mrp: 8000, img: arecaImg },
     ],
   },
   {
@@ -521,8 +521,8 @@ export const reels = [
     img: reel5,
     caption: "Designer-look in one piece",
     products: [
-      { code: "FFT2399", name: "Faux Ficus Tree — 6 ft", price: 14999, mrp: 23999, img: prod2 },
-      { code: "LRB2799", name: "Loom Rattan Basket", price: 1899, mrp: 2799, img: prod4 },
+      { code: "LFS69", name: "Leaf Textured Planters - Set of 3", price: 4500, mrp: 6500, img: leaf3Img },
+      { code: "LFS70", name: "Leaf Textured Planters - Set of 2", price: 4500, mrp: 6500, img: leaf2Img },
     ],
   },
 ];
