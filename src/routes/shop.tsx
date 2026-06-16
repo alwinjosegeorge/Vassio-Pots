@@ -328,8 +328,8 @@ function ShopPage() {
                       {p.isSoldOut ? "Sold Out" : `${off}% OFF`}
                     </span>
                     {/* View Product Banner (Desktop hover) */}
-                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-primary py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
-                      <span className="text-primary-foreground text-xs font-semibold tracking-[0.2em] uppercase font-serif">
+                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-accent py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
+                      <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase font-serif">
                         View Product
                       </span>
                     </div>
@@ -340,7 +340,7 @@ function ShopPage() {
                         e.stopPropagation();
                         toast.success(`Added ${p.name} to Cart!`);
                       }}
-                      className="lg:hidden absolute bottom-3 right-3 bg-primary hover:bg-primary/90 text-primary-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
+                      className="lg:hidden absolute bottom-3 right-3 bg-accent hover:bg-accent/90 text-accent-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
                       aria-label="Add to Cart"
                     >
                       <ShoppingBag className="h-4 w-4" />
