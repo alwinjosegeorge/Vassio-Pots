@@ -108,7 +108,7 @@ function Index() {
       </section>
 
       {/* Shop our products */}
-      <section id="shop" className="mx-auto max-w-[1400px] px-6 py-24">
+      <section id="shop" className="mx-auto max-w-[1400px] px-6 pt-24 pb-12 md:pb-24">
         <div className="mb-14 text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
             Curated Greenery
@@ -171,7 +171,7 @@ function Index() {
             );
           })}
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-8 md:mt-16 text-center">
           <Link
             to="/shop"
             search={{ category: "plants" }}
@@ -444,19 +444,18 @@ function Index() {
           <div className="absolute inset-0 bg-black/5" />
         </div>
         <div className="relative text-center z-10 px-6 max-w-2xl bg-background/90 backdrop-blur-sm p-8 md:p-12 border border-border/30 rounded-3xl shadow-xl mx-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Our Story</p>
-          <h2 className="serif mt-4 text-3xl md:text-4xl text-foreground">Warmth, Craft & Calm</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Vassio Pots</p>
+          <h2 className="serif mt-4 text-3xl md:text-4xl text-foreground">Handcrafted Planters & Organic Calm</h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground/90">
-            At Vassio, we believe your home should be your sanctuary. We source, design and craft
-            thoughtful home elements that bring organic beauty and natural calm to modern spaces.
+            Elevate your spaces with our premium range of handcrafted ceramic pots, minimalist fiber-glass planters, and curated indoor plants. We design statement pieces that bring natural warmth, craftsmanship, and organic calm to your home sanctuary.
           </p>
           <div className="mt-8">
-            <a
-              href="#"
-              className="bg-accent text-accent-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-accent/90 transition duration-300 rounded"
+            <Link
+              to="/shop"
+              className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 rounded cursor-pointer"
             >
-              Read More
-            </a>
+              Explore Collection
+            </Link>
           </div>
         </div>
       </section>
@@ -473,44 +472,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Our Blogs */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
-        <div className="mb-14 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Reads & Ideas</p>
-          <h2 className="serif mt-3 text-4xl md:text-5xl text-foreground">Our Blogs</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogs.map((b) => (
-            <article key={b.title} className="group cursor-pointer">
-              <div className="aspect-[16/10] overflow-hidden bg-secondary border border-border/30 rounded-2xl">
-                <img
-                  src={b.img}
-                  alt={b.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
-              <p className="mt-5 text-xs text-muted-foreground tracking-wide font-medium">
-                {b.date}
-              </p>
-              <h3 className="serif mt-3 text-xl text-foreground group-hover:text-primary transition-colors leading-tight">
-                {b.title}
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground/80 leading-relaxed truncate-2-lines">
-                {b.desc}
-              </p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-14 text-center">
-          <a
-            href="#"
-            className="inline-block bg-accent text-accent-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold hover:bg-accent/90 transition duration-300 rounded"
-          >
-            View All Blogs
-          </a>
-        </div>
-      </section>
 
       {/* Instagram Grid */}
       <section className="bg-secondary/20 border-t border-border/30 py-24">
@@ -969,7 +930,7 @@ function WatchAndBuy({ onReelClick }: { onReelClick: (index: number) => void }) 
     scroller.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
   };
   return (
-    <section className="bg-secondary/40 py-24">
+    <section className="bg-secondary/40 pt-12 pb-24 md:py-24">
       <div className="mx-auto max-w-[1400px] px-6">
         <div className="mb-14 relative text-center">
           <h2 className="serif text-4xl md:text-5xl text-foreground">
