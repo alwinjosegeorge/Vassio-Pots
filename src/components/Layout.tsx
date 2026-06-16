@@ -49,13 +49,11 @@ export default function Layout({ children }: { children: ReactNode }) {
             </span>
           ))}
         </div>
-      </div>
-
-      {/* Header */}
+      </div>      {/* Header */}
       <header
         className={`shrink-0 sticky top-0 z-40 transition-all duration-300 transform ease-in-out ${
           isScrolled
-            ? "bg-[#9E8C7D] text-white border-b border-white/10 shadow-md backdrop-blur-none"
+            ? "bg-primary text-primary-foreground border-b border-white/10 shadow-md backdrop-blur-none"
             : "bg-muted/40 text-foreground border-b border-border/20 backdrop-blur-md"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
@@ -69,7 +67,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Hamburger menu - mobile only */}
             <button
               className={`lg:hidden transition-colors ${
-                isScrolled ? "text-white hover:text-white/80" : "text-foreground hover:text-primary"
+                isScrolled ? "text-primary-foreground hover:text-primary-foreground/80" : "text-foreground hover:text-primary"
               }`}
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
@@ -80,7 +78,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <button
               className={`hidden lg:inline-flex items-center gap-2 text-sm transition-colors ${
                 isScrolled
-                  ? "text-white hover:text-white/80"
+                  ? "text-primary-foreground hover:text-primary-foreground/80"
                   : "text-foreground/80 hover:text-foreground"
               }`}
               aria-label="Search"
@@ -88,7 +86,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <Search className="h-5 w-5" />
             </button>
           </div>
-
+ 
           {/* Centered Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <Link to="/" className="flex items-center justify-center">
@@ -101,14 +99,14 @@ export default function Layout({ children }: { children: ReactNode }) {
               />
             </Link>
           </div>
-
+ 
           {/* Right Column */}
           <div className="flex items-center gap-4 sm:gap-5 z-10">
             {/* Search - mobile only */}
             <button
               className={`lg:hidden transition-colors ${
                 isScrolled
-                  ? "text-white hover:text-white/80"
+                  ? "text-primary-foreground hover:text-primary-foreground/80"
                   : "text-foreground/80 hover:text-foreground"
               }`}
               aria-label="Search"
@@ -120,7 +118,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               aria-label="Wishlist"
               className={`transition-colors ${
                 isScrolled
-                  ? "text-white hover:text-white/80"
+                  ? "text-primary-foreground hover:text-primary-foreground/80"
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
@@ -131,14 +129,14 @@ export default function Layout({ children }: { children: ReactNode }) {
               aria-label="Cart"
               className={`relative transition-colors ${
                 isScrolled
-                  ? "text-white hover:text-white/80"
+                  ? "text-primary-foreground hover:text-primary-foreground/80"
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
               <ShoppingBag className="h-5 w-5" />
               <span
                 className={`absolute -right-2 -top-2 grid h-4 w-4 place-items-center rounded-full text-[10px] font-bold transition-all duration-300 ${
-                  isScrolled ? "bg-white text-[#9E8C7D]" : "bg-announce text-announce-foreground"
+                  isScrolled ? "bg-primary-foreground text-primary" : "bg-announce text-announce-foreground"
                 }`}
               >
                 0

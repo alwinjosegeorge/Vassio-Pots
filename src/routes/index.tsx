@@ -138,8 +138,8 @@ function Index() {
                     {p.isSoldOut ? "Sold Out" : `${off}% OFF`}
                   </span>
                   {/* View Product Banner (aligned to the bottom of the image container, appearing on hover - Desktop only) */}
-                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-[#9E8C7D] py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
-                    <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase font-serif">
+                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-primary py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
+                    <span className="text-primary-foreground text-xs font-semibold tracking-[0.2em] uppercase font-serif">
                       View Product
                     </span>
                   </div>
@@ -150,7 +150,7 @@ function Index() {
                       e.stopPropagation();
                       toast.success(`Added ${p.name} to Cart!`);
                     }}
-                    className="lg:hidden absolute bottom-3 right-3 bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
+                    className="lg:hidden absolute bottom-3 right-3 bg-primary hover:bg-primary/90 text-primary-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
                     aria-label="Add to Cart"
                   >
                     <ShoppingBag className="h-4 w-4" />
@@ -175,7 +175,7 @@ function Index() {
           <Link
             to="/shop"
             search={{ category: "plants" }}
-            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+            className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
           >
             View All
           </Link>
@@ -216,8 +216,8 @@ function Index() {
                     {p.isSoldOut ? "Sold Out" : `${off}% OFF`}
                   </span>
                   {/* View Product Banner (aligned to the bottom of the image container, appearing on hover - Desktop only) */}
-                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-[#9E8C7D] py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
-                    <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase font-serif">
+                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-primary py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
+                    <span className="text-primary-foreground text-xs font-semibold tracking-[0.2em] uppercase font-serif">
                       View Product
                     </span>
                   </div>
@@ -228,7 +228,7 @@ function Index() {
                       e.stopPropagation();
                       toast.success(`Added ${p.name} to Cart!`);
                     }}
-                    className="lg:hidden absolute bottom-3 right-3 bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
+                    className="lg:hidden absolute bottom-3 right-3 bg-primary hover:bg-primary/90 text-primary-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
                     aria-label="Add to Cart"
                   >
                     <ShoppingBag className="h-4 w-4" />
@@ -253,7 +253,7 @@ function Index() {
           <Link
             to="/shop"
             search={{ category: "vases" }}
-            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+            className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
           >
             View All
           </Link>
@@ -329,7 +329,7 @@ function Index() {
           <div className="mt-8">
             <Link
               to="/shop"
-              className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 rounded cursor-pointer"
+              className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 rounded cursor-pointer"
             >
               Explore Collection
             </Link>
