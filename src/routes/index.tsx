@@ -54,19 +54,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [selectedReelIndex, setSelectedReelIndex] = useState<number | null>(null);
-  const [showAllProducts, setShowAllProducts] = useState(false);
-  const [showAllVases, setShowAllVases] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const visibleProducts = showAllProducts || !isMobile ? products : products.slice(0, 4);
-  const visibleVases = showAllVases || !isMobile ? [...vases, ...auxiliaryProducts.slice(0, 4)] : vases;
+  const visibleProducts = products.slice(0, 4);
+  const visibleVases = vases.slice(0, 4);
 
   return (
     <Layout>
@@ -182,16 +171,15 @@ function Index() {
             );
           })}
         </div>
-        {isMobile && (
-          <div className="mt-16 text-center">
-            <button
-              onClick={() => setShowAllProducts(!showAllProducts)}
-              className="inline-block bg-accent text-accent-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold hover:bg-accent/90 transition duration-300 rounded cursor-pointer animate-fade-in"
-            >
-              {showAllProducts ? "Show Less" : "View All"}
-            </button>
-          </div>
-        )}
+        <div className="mt-16 text-center">
+          <Link
+            to="/shop"
+            search={{ category: "plants" }}
+            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+          >
+            View All
+          </Link>
+        </div>
       </section>
 
       {/* Watch and Buy */}
@@ -261,16 +249,15 @@ function Index() {
             );
           })}
         </div>
-        {isMobile && (
-          <div className="mt-16 text-center">
-            <button
-              onClick={() => setShowAllVases(!showAllVases)}
-              className="inline-block bg-accent text-accent-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold hover:bg-accent/90 transition duration-300 rounded cursor-pointer animate-fade-in"
-            >
-              {showAllVases ? "Show Less" : "View All"}
-            </button>
-          </div>
-        )}
+        <div className="mt-16 text-center">
+          <Link
+            to="/shop"
+            search={{ category: "vases" }}
+            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+          >
+            View All
+          </Link>
+        </div>
       </section>
 
       {/* Shop by Category */}
