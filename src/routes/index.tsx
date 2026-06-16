@@ -1034,11 +1034,11 @@ function WatchAndBuy({ onReelClick }: { onReelClick: (index: number) => void }) 
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30" />
-                  <div className="absolute left-3 top-3 text-[10px] uppercase tracking-[0.25em] text-white/90 font-medium">
+                  <div className="hidden md:block absolute left-3 top-3 text-[10px] uppercase tracking-[0.25em] text-white/90 font-medium">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent mr-1.5 animate-pulse" />
                     Reel
                   </div>
-                  <p className="absolute left-4 right-4 top-12 text-white text-xs md:text-sm font-medium drop-shadow leading-snug">
+                  <p className="hidden md:block absolute left-4 right-4 top-12 text-white text-xs md:text-sm font-medium drop-shadow leading-snug">
                     {r.caption}
                   </p>
 
