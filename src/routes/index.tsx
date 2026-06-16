@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState, useEffect } from "react";
 import Layout from "@/components/Layout";
-import { Instagram, Heart, Share2, Volume2, VolumeX, X, ShoppingBag, Truck, RotateCcw, Phone, ShieldCheck } from "lucide-react";
+import { Instagram, Heart, Share2, Volume2, VolumeX, X, ShoppingBag, Truck, RotateCcw, Phone, ShieldCheck, ExternalLink, ArrowRight, ShoppingCart } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import {
   products,
@@ -603,6 +603,7 @@ function ReelsViewerModal({
 }) {
   const [activeIndex, setActiveIndex] = useState(initialIndex);
   const [isMuted, setIsMuted] = useState(true);
+  const [quickViewProduct, setQuickViewProduct] = useState<any | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -730,6 +731,7 @@ function ReelsViewerModal({
                   isMuted={isMuted}
                   onToggleMute={() => setIsMuted(!isMuted)}
                   onClose={onClose}
+                  onQuickView={(p) => setQuickViewProduct(p)}
                 />
               </div>
             );
@@ -753,11 +755,21 @@ function ReelsViewerModal({
                   isMuted={isMuted}
                   onToggleMute={() => setIsMuted(!isMuted)}
                   onClose={onClose}
+                  onQuickView={(p) => setQuickViewProduct(p)}
                 />
               </div>
             );
           })}
         </div>
+      )}
+
+      {/* Quick View Modal Overlay */}
+      {quickViewProduct && (
+        <QuickViewModal
+          product={quickViewProduct}
+          onClose={() => setQuickViewProduct(null)}
+          onCloseReels={onClose}
+        />
       )}
     </div>
   );
@@ -770,6 +782,7 @@ function ReelItem({
   isMuted,
   onToggleMute,
   onClose,
+  onQuickView,
 }: {
   reel: (typeof reels)[0];
   index: number;
@@ -777,6 +790,7 @@ function ReelItem({
   isMuted: boolean;
   onToggleMute: () => void;
   onClose: () => void;
+  onQuickView: (product: any) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [progress, setProgress] = useState(0);
@@ -844,7 +858,7 @@ function ReelItem({
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/20 z-30">
         <div
-          className="h-full bg-red-600 transition-all duration-75"
+          className="h-full bg-white transition-all duration-75"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -936,7 +950,7 @@ function ReelItem({
                         <span className="text-[9px] lg:text-[7.5px] text-muted-foreground line-through ml-1.5 lg:ml-1 serif">
                           ₹{p.mrp.toLocaleString("en-IN")}
                         </span>
-                        <span className="text-[8px] lg:text-[6.5px] bg-red-50 text-red-700 px-1 py-0.5 font-bold uppercase rounded ml-1.5 lg:ml-1">
+                        <span className="text-[8px] lg:text-[6.5px] bg-primary/10 text-primary px-1 py-0.5 font-bold uppercase rounded ml-1.5 lg:ml-1">
                           {off}% OFF
                         </span>
                       </div>
@@ -944,10 +958,13 @@ function ReelItem({
                   </Link>
 
                   <button
-                    onClick={(e) => handleAddToCart(e, p.name)}
-                    className="bg-[#7D1F1F] hover:bg-[#661818] text-white py-2 lg:py-1 rounded-lg lg:rounded text-[10px] lg:text-[8.5px] font-bold uppercase tracking-wider text-center w-full block transition-colors duration-200"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onQuickView(p);
+                    }}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground py-2 lg:py-1 rounded-lg lg:rounded text-[10px] lg:text-[8.5px] font-bold uppercase tracking-wider text-center w-full block transition-colors duration-200 cursor-pointer"
                   >
-                    Add to Cart
+                    View Product
                   </button>
                 </div>
               );
@@ -1001,7 +1018,7 @@ function WatchAndBuy({ onReelClick }: { onReelClick: (index: number) => void }) 
             return (
               <div
                 key={r.caption}
-                className="shrink-0 w-[calc(50%-8px)] md:w-[280px] snap-start flex flex-col cursor-pointer"
+                className="shrink-0 w-[43%] md:w-[280px] snap-start flex flex-col cursor-pointer"
                 onClick={() => onReelClick(index)}
               >
                 <article className="group relative w-full aspect-[9/16] overflow-hidden bg-muted border border-border/20 rounded-2xl md:rounded-3xl">
@@ -1048,7 +1065,7 @@ function WatchAndBuy({ onReelClick }: { onReelClick: (index: number) => void }) 
                       </span>
                     </div>
                     <div className="mt-1.5">
-                      <span className="inline-block text-[9px] font-bold bg-[#7D1F1F] text-white px-2 py-0.5 rounded tracking-wide">
+                      <span className="inline-block text-[9px] font-bold bg-primary text-primary-foreground px-2 py-0.5 rounded tracking-wide">
                         {off}% off
                       </span>
                     </div>
@@ -1060,5 +1077,146 @@ function WatchAndBuy({ onReelClick }: { onReelClick: (index: number) => void }) 
         </div>
       </div>
     </section>
+  );
+}
+
+function QuickViewModal({
+  product,
+  onClose,
+  onCloseReels,
+}: {
+  product: any;
+  onClose: () => void;
+  onCloseReels: () => void;
+}) {
+  const [cartCount, setCartCount] = useState(2);
+  const [qty, setQty] = useState(1);
+  const images = product.thumbnails || [product.img];
+  const off = product.mrp && product.price ? Math.round(((product.mrp - product.price) / product.mrp) * 100) : 0;
+
+  const handleAddToCart = () => {
+    setQty((prev) => prev + 1);
+    setCartCount((prev) => prev + 1);
+    toast.success(`Added ${product.name} to Cart!`);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-end lg:items-center justify-center p-0 lg:p-4 animate-in fade-in duration-200">
+      {/* Background close trigger */}
+      <div className="absolute inset-0" onClick={onClose} />
+
+      {/* Modal Box */}
+      <div className="bg-white text-black lg:rounded-[24px] rounded-t-[24px] rounded-b-none w-full lg:max-w-[380px] p-5.5 shadow-2xl relative flex flex-col gap-4.5 animate-in lg:zoom-in-95 slide-in-from-bottom duration-300 lg:duration-200 z-10 self-end lg:self-center">
+        {/* Close Button (Top Right) */}
+        <button
+          onClick={onClose}
+          className="absolute right-4.5 top-4.5 text-gray-400 hover:text-gray-700 transition cursor-pointer"
+          aria-label="Close"
+        >
+          <X className="h-4.5 w-4.5" />
+        </button>
+
+        {/* Title */}
+        <h3 className="serif text-center text-[15px] font-bold tracking-widest text-[#0E1A14]">
+          SHOP NOW
+        </h3>
+
+        {/* Image Gallery (Scrollable horizontal list) */}
+        <div className="flex gap-3 overflow-x-auto pb-2.5 px-1 snap-x snap-mandatory scrollbar-none [&::-webkit-scrollbar]:hidden scroll-smooth">
+          {images.map((imgUrl: string, i: number) => (
+            <div
+              key={i}
+              className="w-[110px] aspect-[2/3.2] shrink-0 snap-center rounded-[18px] overflow-hidden shadow-md border border-gray-100"
+            >
+              <img
+                src={imgUrl}
+                alt={`${product.name} view ${i + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Product Details Name & Link */}
+        <div className="flex justify-between items-start gap-4 mt-0.5 px-1">
+          <h4 className="text-[13px] font-semibold text-gray-800 leading-tight">
+            {product.name}
+          </h4>
+          <Link
+            to="/product/$productId"
+            params={{ productId: product.code }}
+            onClick={() => {
+              onClose();
+              onCloseReels();
+            }}
+            className="text-gray-400 hover:text-gray-700 transition cursor-pointer shrink-0"
+            aria-label="Open detail page"
+          >
+            <ExternalLink className="h-4 w-4" />
+          </Link>
+        </div>
+
+        {/* Price Row */}
+        <div className="flex items-center gap-3 px-1">
+          {product.mrp && (
+            <span className="text-[11px] text-gray-400 line-through serif">
+              ₹{product.mrp.toLocaleString("en-IN")}
+            </span>
+          )}
+          <span className="text-sm font-bold text-gray-900 serif">
+            ₹{product.price.toLocaleString("en-IN")}
+          </span>
+          {off > 0 && (
+            <span className="text-[9px] bg-[#7D1F1F] text-white px-2 py-0.5 font-bold uppercase rounded serif tracking-wider">
+              {off}% off
+            </span>
+          )}
+        </div>
+
+        {/* Action Buttons Row */}
+        <div className="flex items-center gap-2 mt-1 px-1">
+          {/* Quantity selector button */}
+          <div className="flex-1 border border-[#7D1F1F] text-gray-800 rounded-xl h-10 px-3 flex items-center justify-between">
+            <div className="flex items-center gap-1.5 text-gray-500">
+              <ShoppingCart className="h-4 w-4 text-[#7D1F1F]" />
+            </div>
+            <span className="text-xs font-bold text-gray-800">{qty}</span>
+            <button
+              onClick={handleAddToCart}
+              className="bg-[#7D1F1F] hover:bg-[#661818] text-white w-5 h-5 flex items-center justify-center rounded-md font-bold text-xs cursor-pointer transition active:scale-95"
+            >
+              +
+            </button>
+          </div>
+
+          {/* More Info Link */}
+          <Link
+            to="/product/$productId"
+            params={{ productId: product.code }}
+            onClick={() => {
+              onClose();
+              onCloseReels();
+            }}
+            className="flex-1 border border-[#7D1F1F] text-[#7D1F1F] hover:bg-red-50/20 py-2.5 rounded-xl text-[9.5px] font-bold uppercase tracking-wider text-center flex items-center justify-center gap-1 transition duration-200 active:scale-95 cursor-pointer h-10"
+          >
+            MORE INFO <ArrowRight className="h-3 w-3" />
+          </Link>
+
+          {/* Cart Shopping Bag Button with Badge */}
+          <button
+            onClick={handleAddToCart}
+            className="h-10 w-10 shrink-0 border border-gray-300 rounded-xl flex items-center justify-center relative hover:bg-gray-50 transition active:scale-95 cursor-pointer"
+            aria-label="View Cart"
+          >
+            <ShoppingBag className="h-4 w-4 text-gray-700" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 bg-[#7D1F1F] text-white text-[9px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-md animate-in zoom-in duration-200">
+                {cartCount}
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

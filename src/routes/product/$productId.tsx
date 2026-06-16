@@ -146,7 +146,7 @@ function ProductDetails({
           <span className="text-base text-muted-foreground line-through serif">
             ₹{product.mrp.toLocaleString("en-IN")}
           </span>
-          <span className="text-[10px] bg-[#7D1F1F] text-white px-2 py-0.5 font-bold uppercase tracking-wider rounded">
+          <span className="text-[10px] bg-primary text-primary-foreground px-2 py-0.5 font-bold uppercase tracking-wider rounded">
             {off}% OFF
           </span>
         </div>
