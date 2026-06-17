@@ -88,7 +88,7 @@ function ProductImages({
   }, [product.code, product.img]);
 
   return (
-    <div className="w-full lg:w-1/2 flex flex-col-reverse md:flex-row gap-4 bg-white/40 p-4 md:p-6 border border-border/30 rounded-[24px]">
+    <div className="w-full lg:w-1/2 flex flex-col-reverse md:flex-row gap-4 bg-card/40 p-4 md:p-6 border border-border/30 rounded-[24px]">
       {/* Thumbnail strip */}
       <div className="flex md:flex-col gap-2.5 overflow-x-auto md:overflow-x-visible shrink-0 md:w-20 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {thumbnails.map((t, idx) => (
