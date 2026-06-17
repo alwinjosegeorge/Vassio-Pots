@@ -71,10 +71,10 @@ function Index() {
         </div>
         <div className="relative text-center z-10 px-6">
           <h1 className="font-script text-white text-6xl md:text-9xl mb-[-15px] md:mb-[-35px] drop-shadow-sm select-none">
-            Artificial
+            Vassio
           </h1>
           <h2 className="serif text-primary uppercase text-5xl md:text-8xl tracking-[0.2em] font-medium drop-shadow-sm">
-            Plants
+            Pots
           </h2>
           <p className="text-white text-xs md:text-sm uppercase tracking-[0.4em] mt-8 max-w-lg mx-auto leading-loose drop-shadow-md">
             The beauty of nature, perfected for modern living.
