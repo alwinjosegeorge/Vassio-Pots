@@ -225,10 +225,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground shrink-0 mt-auto">
-        <div className="mx-auto max-w-[1400px] px-6 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="mx-auto max-w-[1400px] px-6 py-12 md:py-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
             {/* Brand column */}
-            <div>
+            <div className="col-span-2 lg:col-span-1">
               <img
                 src={logo}
                 alt="VASSIO Logo"
@@ -252,7 +252,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Quick Links</p>
               <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
                 {navLinks.map((l) => (
@@ -266,7 +266,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Support */}
-            <div>
+            <div className="col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Support</p>
               <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
                 <li>
@@ -298,7 +298,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Newsletter */}
-            <div>
+            <div className="col-span-2 lg:col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Newsletter</p>
               <p className="mt-6 text-sm text-primary-foreground/70 leading-relaxed">
                 Subscribe to receive inspiration, updates, and exclusive access to new launches.
@@ -321,7 +321,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Copyright line */}
-          <div className="mt-16 border-t border-primary-foreground/15 pt-8 text-center text-xs text-primary-foreground/50">
+          <div className="mt-10 md:mt-16 border-t border-primary-foreground/15 pt-6 md:pt-8 text-center text-xs text-primary-foreground/50">
             © {new Date().getFullYear()} Vassio. All rights reserved.
           </div>
         </div>
