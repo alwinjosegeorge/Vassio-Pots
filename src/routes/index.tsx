@@ -71,10 +71,10 @@ function Index() {
         </div>
         <div className="relative text-center z-10 px-6">
           <h1 className="font-script text-white text-6xl md:text-9xl mb-[-15px] md:mb-[-35px] drop-shadow-sm select-none">
-            Vassio
+            Artificial
           </h1>
-          <h2 className="serif text-white uppercase text-5xl md:text-8xl tracking-[0.2em] font-medium drop-shadow-sm">
-            Pots
+          <h2 className="serif text-primary uppercase text-5xl md:text-8xl tracking-[0.2em] font-medium drop-shadow-sm">
+            Plants
           </h2>
           <p className="text-white text-xs md:text-sm uppercase tracking-[0.4em] mt-8 max-w-lg mx-auto leading-loose drop-shadow-md">
             The beauty of nature, perfected for modern living.
@@ -138,7 +138,7 @@ function Index() {
                     {p.isSoldOut ? "Sold Out" : `${off}% OFF`}
                   </span>
                   {/* View Product Banner (aligned to the bottom of the image container, appearing on hover - Desktop only) */}
-                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-accent py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
+                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-[#9E8C7D] py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
                     <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase font-serif">
                       View Product
                     </span>
@@ -150,7 +150,7 @@ function Index() {
                       e.stopPropagation();
                       toast.success(`Added ${p.name} to Cart!`);
                     }}
-                    className="lg:hidden absolute bottom-3 right-3 bg-accent hover:bg-accent/90 text-accent-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
+                    className="lg:hidden absolute bottom-3 right-3 bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
                     aria-label="Add to Cart"
                   >
                     <ShoppingBag className="h-4 w-4" />
@@ -175,7 +175,7 @@ function Index() {
           <Link
             to="/shop"
             search={{ category: "plants" }}
-            className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
           >
             View All
           </Link>
@@ -216,7 +216,7 @@ function Index() {
                     {p.isSoldOut ? "Sold Out" : `${off}% OFF`}
                   </span>
                   {/* View Product Banner (aligned to the bottom of the image container, appearing on hover - Desktop only) */}
-                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-accent py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
+                  <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-[#9E8C7D] py-3.5 text-center transition-all duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md">
                     <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase font-serif">
                       View Product
                     </span>
@@ -228,7 +228,7 @@ function Index() {
                       e.stopPropagation();
                       toast.success(`Added ${p.name} to Cart!`);
                     }}
-                    className="lg:hidden absolute bottom-3 right-3 bg-accent hover:bg-accent/90 text-accent-foreground w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
+                    className="lg:hidden absolute bottom-3 right-3 bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md transition-colors z-20"
                     aria-label="Add to Cart"
                   >
                     <ShoppingBag className="h-4 w-4" />
@@ -253,7 +253,7 @@ function Index() {
           <Link
             to="/shop"
             search={{ category: "vases" }}
-            className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
+            className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-10 py-3.5 text-xs uppercase tracking-[0.25em] font-semibold transition duration-300 rounded cursor-pointer animate-fade-in"
           >
             View All
           </Link>
@@ -329,7 +329,7 @@ function Index() {
           <div className="mt-8">
             <Link
               to="/shop"
-              className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 rounded cursor-pointer"
+              className="inline-block bg-[#9E8C7D] hover:bg-[#8c7a6b] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition duration-300 rounded cursor-pointer"
             >
               Explore Collection
             </Link>
@@ -749,7 +749,7 @@ function ReelItem({
               return (
                 <div
                   key={p.code}
-                  className="bg-card text-card-foreground border border-border/30 p-3.5 lg:p-2 rounded-[20px] lg:rounded-xl shadow-xl flex flex-col gap-2.5 lg:gap-1.5 w-[225px] lg:w-[170px] shrink-0 snap-center mx-auto"
+                  className="bg-white text-black p-3.5 lg:p-2 rounded-[20px] lg:rounded-xl shadow-xl flex flex-col gap-2.5 lg:gap-1.5 w-[225px] lg:w-[170px] shrink-0 snap-center mx-auto"
                 >
                   <Link
                     to="/product/$productId"
@@ -931,18 +931,18 @@ function QuickViewModal({
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Modal Box */}
-      <div className="bg-card text-card-foreground border border-border/30 lg:rounded-[24px] rounded-t-[24px] rounded-b-none w-full lg:max-w-[380px] p-5.5 shadow-2xl relative flex flex-col gap-4.5 animate-in lg:zoom-in-95 slide-in-from-bottom duration-300 lg:duration-200 z-10 self-end lg:self-center">
+      <div className="bg-white text-black lg:rounded-[24px] rounded-t-[24px] rounded-b-none w-full lg:max-w-[380px] p-5.5 shadow-2xl relative flex flex-col gap-4.5 animate-in lg:zoom-in-95 slide-in-from-bottom duration-300 lg:duration-200 z-10 self-end lg:self-center">
         {/* Close Button (Top Right) */}
         <button
           onClick={onClose}
-          className="absolute right-4.5 top-4.5 text-muted-foreground hover:text-foreground transition cursor-pointer"
+          className="absolute right-4.5 top-4.5 text-gray-400 hover:text-gray-700 transition cursor-pointer"
           aria-label="Close"
         >
           <X className="h-4.5 w-4.5" />
         </button>
 
         {/* Title */}
-        <h3 className="serif text-center text-[15px] font-bold tracking-widest text-foreground">
+        <h3 className="serif text-center text-[15px] font-bold tracking-widest text-[#0E1A14]">
           SHOP NOW
         </h3>
 
@@ -951,7 +951,7 @@ function QuickViewModal({
           {images.map((imgUrl: string, i: number) => (
             <div
               key={i}
-              className="w-[110px] aspect-[2/3.2] shrink-0 snap-center rounded-[18px] overflow-hidden shadow-md border border-border/30"
+              className="w-[110px] aspect-[2/3.2] shrink-0 snap-center rounded-[18px] overflow-hidden shadow-md border border-gray-100"
             >
               <img
                 src={imgUrl}
@@ -964,7 +964,7 @@ function QuickViewModal({
 
         {/* Product Details Name & Link */}
         <div className="flex justify-between items-start gap-4 mt-0.5 px-1">
-          <h4 className="text-[13px] font-semibold text-foreground leading-tight">
+          <h4 className="text-[13px] font-semibold text-gray-800 leading-tight">
             {product.name}
           </h4>
           <Link
@@ -974,7 +974,7 @@ function QuickViewModal({
               onClose();
               onCloseReels();
             }}
-            className="text-muted-foreground hover:text-foreground transition cursor-pointer shrink-0"
+            className="text-gray-400 hover:text-gray-700 transition cursor-pointer shrink-0"
             aria-label="Open detail page"
           >
             <ExternalLink className="h-4 w-4" />
@@ -984,15 +984,15 @@ function QuickViewModal({
         {/* Price Row */}
         <div className="flex items-center gap-3 px-1">
           {product.mrp && (
-            <span className="text-[11px] text-muted-foreground line-through serif">
+            <span className="text-[11px] text-gray-400 line-through serif">
               ₹{product.mrp.toLocaleString("en-IN")}
             </span>
           )}
-          <span className="text-sm font-bold text-foreground serif">
+          <span className="text-sm font-bold text-gray-900 serif">
             ₹{product.price.toLocaleString("en-IN")}
           </span>
           {off > 0 && (
-            <span className="text-[9px] bg-primary text-primary-foreground px-2 py-0.5 font-bold uppercase rounded serif tracking-wider">
+            <span className="text-[9px] bg-[#7D1F1F] text-white px-2 py-0.5 font-bold uppercase rounded serif tracking-wider">
               {off}% off
             </span>
           )}
@@ -1001,14 +1001,14 @@ function QuickViewModal({
         {/* Action Buttons Row */}
         <div className="flex items-center gap-2 mt-1 px-1">
           {/* Quantity selector button */}
-          <div className="flex-1 border border-primary text-foreground rounded-xl h-10 px-3 flex items-center justify-between">
-            <div className="flex items-center gap-1.5 text-muted-foreground">
-              <ShoppingCart className="h-4 w-4 text-primary" />
+          <div className="flex-1 border border-[#7D1F1F] text-gray-800 rounded-xl h-10 px-3 flex items-center justify-between">
+            <div className="flex items-center gap-1.5 text-gray-500">
+              <ShoppingCart className="h-4 w-4 text-[#7D1F1F]" />
             </div>
-            <span className="text-xs font-bold text-foreground">{qty}</span>
+            <span className="text-xs font-bold text-gray-800">{qty}</span>
             <button
               onClick={handleAddToCart}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground w-5 h-5 flex items-center justify-center rounded-md font-bold text-xs cursor-pointer transition active:scale-95"
+              className="bg-[#7D1F1F] hover:bg-[#661818] text-white w-5 h-5 flex items-center justify-center rounded-md font-bold text-xs cursor-pointer transition active:scale-95"
             >
               +
             </button>
@@ -1022,7 +1022,7 @@ function QuickViewModal({
               onClose();
               onCloseReels();
             }}
-            className="flex-1 border border-primary text-primary hover:bg-primary/10 py-2.5 rounded-xl text-[9.5px] font-bold uppercase tracking-wider text-center flex items-center justify-center gap-1 transition duration-200 active:scale-95 cursor-pointer h-10"
+            className="flex-1 border border-[#7D1F1F] text-[#7D1F1F] hover:bg-red-50/20 py-2.5 rounded-xl text-[9.5px] font-bold uppercase tracking-wider text-center flex items-center justify-center gap-1 transition duration-200 active:scale-95 cursor-pointer h-10"
           >
             MORE INFO <ArrowRight className="h-3 w-3" />
           </Link>
@@ -1030,12 +1030,12 @@ function QuickViewModal({
           {/* Cart Shopping Bag Button with Badge */}
           <button
             onClick={handleAddToCart}
-            className="h-10 w-10 shrink-0 border border-border rounded-xl flex items-center justify-center relative hover:bg-muted transition active:scale-95 cursor-pointer"
+            className="h-10 w-10 shrink-0 border border-gray-300 rounded-xl flex items-center justify-center relative hover:bg-gray-50 transition active:scale-95 cursor-pointer"
             aria-label="View Cart"
           >
-            <ShoppingBag className="h-4 w-4 text-foreground" />
+            <ShoppingBag className="h-4 w-4 text-gray-700" />
             {cartCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 bg-primary text-primary-foreground text-[9px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-md animate-in zoom-in duration-200">
+              <span className="absolute -top-1.5 -right-1.5 bg-[#7D1F1F] text-white text-[9px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-md animate-in zoom-in duration-200">
                 {cartCount}
               </span>
             )}

@@ -55,7 +55,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header
         className={`shrink-0 sticky top-0 z-40 transition-all duration-300 transform ease-in-out ${
           isScrolled
-            ? "bg-primary text-primary-foreground border-b border-primary-foreground/10 shadow-md backdrop-blur-none"
+            ? "bg-[#9E8C7D] text-white border-b border-white/10 shadow-md backdrop-blur-none"
             : "bg-muted/40 text-foreground border-b border-border/20 backdrop-blur-md"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
@@ -138,7 +138,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <ShoppingBag className="h-5 w-5" />
               <span
                 className={`absolute -right-2 -top-2 grid h-4 w-4 place-items-center rounded-full text-[10px] font-bold transition-all duration-300 ${
-                  isScrolled ? "bg-primary-foreground text-primary" : "bg-announce text-announce-foreground"
+                  isScrolled ? "bg-white text-[#9E8C7D]" : "bg-announce text-announce-foreground"
                 }`}
               >
                 0
@@ -225,10 +225,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground shrink-0 mt-auto">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 md:py-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
+        <div className="mx-auto max-w-[1400px] px-6 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand column */}
-            <div className="col-span-2 lg:col-span-1">
+            <div>
               <img
                 src={logo}
                 alt="VASSIO Logo"
@@ -252,7 +252,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Quick Links */}
-            <div className="col-span-1">
+            <div>
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Quick Links</p>
               <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
                 {navLinks.map((l) => (
@@ -266,7 +266,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Support */}
-            <div className="col-span-1">
+            <div>
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Support</p>
               <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
                 <li>
@@ -298,7 +298,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             {/* Newsletter */}
-            <div className="col-span-2 lg:col-span-1">
+            <div>
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Newsletter</p>
               <p className="mt-6 text-sm text-primary-foreground/70 leading-relaxed">
                 Subscribe to receive inspiration, updates, and exclusive access to new launches.
@@ -321,7 +321,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Copyright line */}
-          <div className="mt-10 md:mt-16 border-t border-primary-foreground/15 pt-6 md:pt-8 text-center text-xs text-primary-foreground/50">
+          <div className="mt-16 border-t border-primary-foreground/15 pt-8 text-center text-xs text-primary-foreground/50">
             © {new Date().getFullYear()} Vassio. All rights reserved.
           </div>
         </div>
